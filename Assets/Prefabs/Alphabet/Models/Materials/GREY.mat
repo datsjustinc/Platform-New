@@ -138,8 +138,8 @@ Material:
     - _UseUIAlphaClip: 0
     - _ZWrite: 1
     m_Colors:
-    - _BaseColor: {r: 0.09433961, g: 0.09433961, b: 0.09433961, a: 1}
-    - _Color: {r: 0.09433961, g: 0.09433961, b: 0.09433961, a: 1}
+    - _BaseColor: {r: 0.4811321, g: 0.29970226, b: 0.17475079, a: 1}
+    - _Color: {r: 0.4811321, g: 0.29970226, b: 0.17475079, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _ReflectColor: {r: 0.44852942, g: 0.44852942, b: 0.44852942, a: 0.5}
     - _SpecColor: {r: 0.2, g: 0.2, b: 0.2, a: 1}
