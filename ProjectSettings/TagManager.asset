@@ -19,6 +19,7 @@ TagManager:
   - End
   - Checkpoint
   - Unlock
+  - Poison
   layers:
   - Default
   - TransparentFX

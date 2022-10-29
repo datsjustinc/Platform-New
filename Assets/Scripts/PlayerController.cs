@@ -69,6 +69,10 @@ public class PlayerController : MonoBehaviour
     Stopwatch stopwatch;
     int deaths = 0;
 
+    Slider healthbar;
+    float currenthealth;
+    GameObject poison;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -81,6 +85,9 @@ public class PlayerController : MonoBehaviour
 
         EndScreen = GameObject.Find("EndScreen");
         EndScreen.gameObject.SetActive(false);
+
+        healthbar = GameObject.Find("Health bar").GetComponent<Slider>();
+        currenthealth = 1.0f;
 
         totalunlocks = GameObject.Find("Unlockables").transform.childCount;
         textonscreen = GameObject.Find("Texties").GetComponent<TMP_Text>();
@@ -101,7 +108,6 @@ public class PlayerController : MonoBehaviour
         dt = FindObjectOfType<DataTracker>().GetComponent<DataTracker>();
         ChangeState(moveState);
     }
-
 
     public void ChangeState(PlayerState newState)
     {
@@ -128,6 +134,10 @@ public class PlayerController : MonoBehaviour
         textonscreen.text = "Time: " + ConvertTimeToString(stopwatch.Elapsed) +
             $"\nDeaths: {deaths} / {dt.totaldeaths}" +
             $"\nCollectibles: {unlocks} / {totalunlocks}";
+
+        healthbar.value = currenthealth;
+        if (currenthealth <= 0f)
+            teleport = true;
 
         playerAnim.SetBool(groundHash, jumpModel.isGrounded);
         playerAnim.SetFloat(jumpVelHash, playerRB.velocity.y);
@@ -315,6 +325,7 @@ public class PlayerController : MonoBehaviour
             moveModel.hspeed = 0;
             playerRB.velocity = new Vector2(0, 0);
             teleport = false;
+            currenthealth = 1.0f;
             ChangeState(moveState);
             StartCoroutine(Delay());
         }
@@ -367,9 +378,7 @@ public class PlayerController : MonoBehaviour
     void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Conveyor"))
-        {
             conveyor = collision.gameObject.GetComponent<Conveyor>();
-        }
 
         if (collision.gameObject.CompareTag("Spike"))
         {
@@ -377,13 +386,24 @@ public class PlayerController : MonoBehaviour
             deaths++;
             dt.totaldeaths++;
         }
+        if (collision.gameObject.CompareTag("Poison"))
+            poison = collision.gameObject;
+    }
+
+    private void OnCollisionStay2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Poison"))
+        {
+            currenthealth -= 0.005f;
+        }
     }
 
     void OnCollisionExit2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Conveyor"))
-        {
             conveyor = null;
-        }
+
+        if (collision.gameObject.CompareTag("Poison"))
+            poison = null;
     }
 }
