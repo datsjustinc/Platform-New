@@ -70,7 +70,7 @@ public class PlayerController : MonoBehaviour
     int deaths = 0;
 
     Slider healthbar;
-    float currenthealth;
+    public float currenthealth;
     GameObject poison;
 
     // Start is called before the first frame update
