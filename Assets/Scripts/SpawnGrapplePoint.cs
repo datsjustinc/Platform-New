@@ -13,12 +13,11 @@ public class SpawnGrapplePoint : MonoBehaviour
     public Vector3 point;
     public int grappleCount;
     public int grappleMax;
-    public List<GameObject> grappleList;
     public PlayerController player;
 
     void Start()
     {
-        grappleList = new List<GameObject>();
+        //grappleList = new List<GameObject>();
         SetGrappleCondition();
 
         main = this.transform.GetChild(6).GetComponent<Camera>();
@@ -52,19 +51,30 @@ public class SpawnGrapplePoint : MonoBehaviour
             point = main.ScreenToWorldPoint(Input.mousePosition);
             point.z = transform.position.z;
             Instantiate(grapplePoint, point, Quaternion.identity);
-            grappleList.Add(Instantiate(grapplePoint, point, Quaternion.identity));
+            //grappleList.Add(Instantiate(grapplePoint, point, Quaternion.identity));
+            Instantiate(grapplePoint, point, Quaternion.identity);
             grappleCount++;
         }
 
         if (player.teleport)
         {
+            /*
             foreach (GameObject grapple in grappleList.ToArray())
             {
                 Debug.Log("removing");
                 grappleList.Remove(grapple);
-                Destroy(grapple);
+                Destroy(grapple)
             }
 
+            SetGrappleCondition();
+            */
+            GameObject[] grapples = GameObject.FindGameObjectsWithTag("Grapple");   
+            
+            foreach (GameObject grapple in grapples) 
+            {
+                Destroy(grapple);
+            }
+            
             SetGrappleCondition();
         }
     }
