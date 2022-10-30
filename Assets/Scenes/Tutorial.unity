@@ -5924,11 +5924,26 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1388275669}
     - target: {fileID: 5327075971711032143, guid: a455f49fc61fb420782d792b32ec90a0, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 5327075971297875098}
+    - target: {fileID: 5327075971711032143, guid: a455f49fc61fb420782d792b32ec90a0, type: 3}
       propertyPath: grapplePoint
       value: 
       objectReference: {fileID: 6370866369429630595, guid: cfe845058ac59a442b68d7a8f0af2fd3, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a455f49fc61fb420782d792b32ec90a0, type: 3}
+--- !u!114 &5327075971297875098 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4071807902327232587, guid: a455f49fc61fb420782d792b32ec90a0, type: 3}
+  m_PrefabInstance: {fileID: 5327075971297875097}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2cd8bd534cdd8b41bbd148bfd29aa72, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &8848797853157570044
 PrefabInstance:
   m_ObjectHideFlags: 0
