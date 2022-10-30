@@ -6,6 +6,9 @@ public class Moving : MonoBehaviour
 {
     Rigidbody2D rb;
     Vector2 originalPosition;
+    BoxCollider2D bc;
+    bool waitingfordelay = true;
+
     public float xspeed;
     public float yspeed;
     public bool bounce;
@@ -14,6 +17,7 @@ public class Moving : MonoBehaviour
     {
         originalPosition = transform.parent.localPosition;
         rb = transform.parent.gameObject.AddComponent<Rigidbody2D>();
+        bc = this.gameObject.GetComponent<BoxCollider2D>();
         rb.freezeRotation = true;
         rb.bodyType = RigidbodyType2D.Kinematic;
     }
@@ -30,10 +34,27 @@ public class Moving : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (bounce && (collision.CompareTag("Ground") || collision.CompareTag("Slidable")))
+        if (waitingfordelay && bounce && (collision.CompareTag("Ground") || collision.CompareTag("Slidable")))
         {
-            xspeed = -xspeed;
-            yspeed = -yspeed;
+            if (xspeed > 0 || yspeed > 0)
+            {
+                StartCoroutine(Delayed());
+                xspeed *= -1;
+                yspeed *= -1;
+            }
+            else
+            {
+                StartCoroutine(Delayed());
+                xspeed *= -1;
+                yspeed *= -1;
+            }
         }
+    }
+
+    IEnumerator Delayed()
+    {
+        waitingfordelay = false;
+        yield return new WaitForSeconds(1f);
+        waitingfordelay = true;
     }
 }

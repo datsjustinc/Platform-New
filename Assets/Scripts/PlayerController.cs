@@ -63,7 +63,7 @@ public class PlayerController : MonoBehaviour
     int totalunlocks;
 
     public GameObject spawn;
-    bool teleport = true;
+    bool teleport = false;
     float defaultspeed;
 
     Stopwatch stopwatch;
@@ -79,8 +79,10 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         statevisualizer = state.move;
-        spawn = GameObject.Find("Spawn");
         defaultspeed = this.moveModel.hspeed;
+
+        spawn = GameObject.Find("Spawn");
+        spawn.transform.localPosition = this.transform.localPosition;
 
         stopwatch = new Stopwatch();
         stopwatch.Start();
