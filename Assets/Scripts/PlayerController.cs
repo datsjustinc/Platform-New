@@ -69,6 +69,8 @@ public class PlayerController : MonoBehaviour
     Stopwatch stopwatch;
     int deaths = 0;
 
+    Moving[] objectswithmoving;
+
     Slider healthbar;
     public float currenthealth;
     GameObject poison;
@@ -82,6 +84,8 @@ public class PlayerController : MonoBehaviour
 
         stopwatch = new Stopwatch();
         stopwatch.Start();
+
+        objectswithmoving = FindObjectsOfType(typeof(Moving)) as Moving[];
 
         EndScreen = GameObject.Find("EndScreen");
         EndScreen.gameObject.SetActive(false);
@@ -328,6 +332,8 @@ public class PlayerController : MonoBehaviour
             currenthealth = 1.0f;
             ChangeState(moveState);
             StartCoroutine(Delay());
+            foreach (Moving x in objectswithmoving)
+                x.ResetPosition();
         }
     }
 
