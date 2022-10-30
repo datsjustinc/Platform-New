@@ -1690,7 +1690,7 @@ PrefabInstance:
     - target: {fileID: 5327075971711032143, guid: a455f49fc61fb420782d792b32ec90a0, type: 3}
       propertyPath: grapplePoint
       value: 
-      objectReference: {fileID: 1265557186}
+      objectReference: {fileID: 6370866369429630595, guid: cfe845058ac59a442b68d7a8f0af2fd3, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a455f49fc61fb420782d792b32ec90a0, type: 3}
 --- !u!4 &487078166 stripped
@@ -3764,11 +3764,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cfe845058ac59a442b68d7a8f0af2fd3, type: 3}
---- !u!1 &1265557186 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6370866369429630595, guid: cfe845058ac59a442b68d7a8f0af2fd3, type: 3}
-  m_PrefabInstance: {fileID: 1265557185}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1308978280
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3776,6 +3771,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1986748087341826649, guid: d0d3e6eae9771493981c1d2dd582070e, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8848797853754332437, guid: d0d3e6eae9771493981c1d2dd582070e, type: 3}
       propertyPath: m_Pivot.x
       value: 0

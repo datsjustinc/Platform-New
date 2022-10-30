@@ -7,6 +7,7 @@ using System;
 using TMPro;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using Debug = UnityEngine.Debug;
 
 public class PlayerController : MonoBehaviour
 {
@@ -63,7 +64,7 @@ public class PlayerController : MonoBehaviour
     int totalunlocks;
 
     public GameObject spawn;
-    bool teleport = false;
+    public bool teleport = false;
     float defaultspeed;
 
     Stopwatch stopwatch;
@@ -335,7 +336,9 @@ public class PlayerController : MonoBehaviour
             ChangeState(moveState);
             StartCoroutine(Delay());
             foreach (Moving x in objectswithmoving)
+            {
                 x.ResetPosition();
+            }
         }
     }
 

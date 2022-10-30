@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.08599334, g: 0.10251229, b: 0.15690309, a: 1}
+  m_IndirectSpecularColor: {r: 0.085719846, g: 0.10228238, b: 0.156748, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1446,11 +1446,6 @@ PrefabInstance:
 --- !u!4 &260662831 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3726901965871229121, guid: cfe845058ac59a442b68d7a8f0af2fd3, type: 3}
-  m_PrefabInstance: {fileID: 260662830}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &260662832 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6370866369429630595, guid: cfe845058ac59a442b68d7a8f0af2fd3, type: 3}
   m_PrefabInstance: {fileID: 260662830}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &268082742
@@ -7359,7 +7354,7 @@ PrefabInstance:
     - target: {fileID: 5327075971711032143, guid: a455f49fc61fb420782d792b32ec90a0, type: 3}
       propertyPath: grapplePoint
       value: 
-      objectReference: {fileID: 260662832}
+      objectReference: {fileID: 6370866369429630595, guid: cfe845058ac59a442b68d7a8f0af2fd3, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a455f49fc61fb420782d792b32ec90a0, type: 3}
 --- !u!4 &1567281752 stripped
