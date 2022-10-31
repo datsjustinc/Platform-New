@@ -191,7 +191,7 @@ MonoBehaviour:
   grappleModel:
     point: {fileID: 0}
     reachTolerance: 0.5
-    grappleJumpSpeed: 22.5
+    grappleJumpSpeed: 20
     grapplePointExcludeCD: 1.5
     GrappleSensor: {fileID: 3456504629102269908}
     playerLine: {fileID: 0}
@@ -202,6 +202,7 @@ MonoBehaviour:
   unlocks: 0
   spawn: {fileID: 0}
   teleport: 0
+  sgp: {fileID: 0}
   currenthealth: 0
 --- !u!114 &1198464872042702179
 MonoBehaviour:
@@ -215,7 +216,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e5c0b78cd0781a439d8ac67690b0ea0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pl: {fileID: 0}
 --- !u!212 &4071807902327232581
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -467,7 +467,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   grapplePoint: {fileID: 0}
-  grappleMax: 0
+  grappleMax: 2
   grappleList: []
 --- !u!1 &5327075970678048899
 GameObject:
