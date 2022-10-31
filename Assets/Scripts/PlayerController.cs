@@ -71,6 +71,7 @@ public class PlayerController : MonoBehaviour
     int deaths = 0;
 
     Moving[] objectswithmoving;
+    SpawnGrapplePoint sgp;
 
     Slider healthbar;
     public float currenthealth;
@@ -89,6 +90,7 @@ public class PlayerController : MonoBehaviour
         stopwatch.Start();
 
         objectswithmoving = FindObjectsOfType(typeof(Moving)) as Moving[];
+        sgp = this.GetComponent<SpawnGrapplePoint>();
 
         EndScreen = GameObject.Find("EndScreen");
         EndScreen.gameObject.SetActive(false);
@@ -140,7 +142,8 @@ public class PlayerController : MonoBehaviour
     {
         textonscreen.text = "Time: " + ConvertTimeToString(stopwatch.Elapsed) +
             $"\nDeaths: {deaths} / {dt.totaldeaths}" +
-            $"\nCollectibles: {unlocks} / {totalunlocks}";
+            $"\nCollectibles: {unlocks} / {totalunlocks}" +
+            $"\nGrapples: {sgp.grappleMax-sgp.grappleList.Count} / {sgp.grappleMax}";
 
         healthbar.value = currenthealth;
         if (currenthealth <= 0f)
