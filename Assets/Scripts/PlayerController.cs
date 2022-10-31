@@ -421,4 +421,12 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.CompareTag("Poison"))
             poison = null;
     }
+    
+    void OnParticleCollision(GameObject other)
+    {
+        if (other.CompareTag("Poison"))
+        {
+            Debug.Log("Contact with Poison Cloud.");
+        }
+    }
 }
