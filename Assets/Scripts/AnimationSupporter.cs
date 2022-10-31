@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class AnimationSupporter : MonoBehaviour
 {
-    [SerializeField] PlayerController pl;
+    PlayerController pl;
 
     private void Awake()
     {

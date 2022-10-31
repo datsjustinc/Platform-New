@@ -8,74 +8,37 @@ using UnityEngine.SceneManagement;
 
 public class SpawnGrapplePoint : MonoBehaviour
 {
-    public Camera main;
+    Camera main;
     public GameObject grapplePoint;
-    public Vector3 point;
-    public int grappleCount;
+    Vector3 point;
     public int grappleMax;
-    public PlayerController player;
+    PlayerController player;
+    public List<GameObject> grappleList = new List<GameObject>();
 
     void Start()
     {
-        //grappleList = new List<GameObject>();
-        SetGrappleCondition();
-
+        player = this.GetComponent<PlayerController>();
         main = this.transform.GetChild(6).GetComponent<Camera>();
-    }
-
-    public void SetGrappleCondition()
-    {
-        string sceneName = SceneManager.GetActiveScene().name;
-        grappleCount = 0;
-        
-        if (sceneName.Equals("Tutorial"))
-        {
-            grappleMax = 5;
-        }
-
-        if (sceneName.Equals("Easy"))
-        {
-            grappleMax = 5;
-        }
-
-        if (sceneName.Equals("Hard"))
-        {
-            grappleMax = 5;
-        }
     }
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Mouse0) && grappleCount < grappleMax)
+        if (Input.GetKeyDown(KeyCode.Mouse0) && grappleList.Count < grappleMax)
         {
             point = main.ScreenToWorldPoint(Input.mousePosition);
             point.z = transform.position.z;
-            Instantiate(grapplePoint, point, Quaternion.identity);
-            //grappleList.Add(Instantiate(grapplePoint, point, Quaternion.identity));
-            Instantiate(grapplePoint, point, Quaternion.identity);
-            grappleCount++;
+            GameObject x = Instantiate(grapplePoint, point, Quaternion.identity);
+            x.GetComponent<SpriteRenderer>().color = Color.yellow;
+            grappleList.Add(x);
         }
 
         if (player.teleport)
         {
-            /*
-            foreach (GameObject grapple in grappleList.ToArray())
+            while (grappleList.Count > 0)
             {
-                Debug.Log("removing");
-                grappleList.Remove(grapple);
-                Destroy(grapple)
+                Destroy(grappleList[0].gameObject);
+                grappleList.RemoveAt(0);
             }
-
-            SetGrappleCondition();
-            */
-            GameObject[] grapples = GameObject.FindGameObjectsWithTag("Grapple");   
-            
-            foreach (GameObject grapple in grapples) 
-            {
-                Destroy(grapple);
-            }
-            
-            SetGrappleCondition();
         }
     }
 }
