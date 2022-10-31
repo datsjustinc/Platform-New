@@ -5,10 +5,16 @@ using UnityEngine;
 public class TurnOffSpriteRenderer : MonoBehaviour
 {
     SpriteRenderer x;
+    MeshRenderer y;
 
     private void Awake()
     {
         x = this.GetComponent<SpriteRenderer>();
-        x.enabled = false;
+        if (x != null)
+            x.enabled = false;
+
+        y = this.GetComponent<MeshRenderer>();
+        if (y != null)
+            y.enabled = false;
     }
 }
