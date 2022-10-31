@@ -36,18 +36,9 @@ public class Moving : MonoBehaviour
     {
         if (waitingfordelay && bounce && (collision.CompareTag("Ground") || collision.CompareTag("Slidable")))
         {
-            if (xspeed > 0 || yspeed > 0)
-            {
-                StartCoroutine(Delayed());
-                xspeed *= -1;
-                yspeed *= -1;
-            }
-            else
-            {
-                StartCoroutine(Delayed());
-                xspeed *= -1;
-                yspeed *= -1;
-            }
+            StartCoroutine(Delayed());
+            xspeed *= -1;
+            yspeed *= -1;
         }
     }
 
