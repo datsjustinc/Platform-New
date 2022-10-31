@@ -71,7 +71,7 @@ public class PlayerController : MonoBehaviour
     int deaths = 0;
 
     Moving[] objectswithmoving;
-    SpawnGrapplePoint sgp;
+    public SpawnGrapplePoint sgp;
 
     Slider healthbar;
     public float currenthealth;
@@ -338,6 +338,7 @@ public class PlayerController : MonoBehaviour
             currenthealth = 1.0f;
             ChangeState(moveState);
             StartCoroutine(Delay());
+            sgp.ReloadGrapples();
             foreach (Moving x in objectswithmoving)
             {
                 x.ResetPosition();

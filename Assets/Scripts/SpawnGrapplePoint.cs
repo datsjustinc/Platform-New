@@ -21,6 +21,15 @@ public class SpawnGrapplePoint : MonoBehaviour
         main = this.transform.GetChild(6).GetComponent<Camera>();
     }
 
+    public void ReloadGrapples()
+    {
+        while (grappleList.Count > 0)
+        {
+            Destroy(grappleList[0].gameObject);
+            grappleList.RemoveAt(0);
+        }
+    }
+
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Mouse0) && grappleList.Count < grappleMax)
@@ -32,13 +41,5 @@ public class SpawnGrapplePoint : MonoBehaviour
             grappleList.Add(x);
         }
 
-        if (player.teleport)
-        {
-            while (grappleList.Count > 0)
-            {
-                Destroy(grappleList[0].gameObject);
-                grappleList.RemoveAt(0);
-            }
-        }
     }
 }

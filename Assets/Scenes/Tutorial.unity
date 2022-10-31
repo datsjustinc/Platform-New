@@ -8090,7 +8090,7 @@ PrefabInstance:
       objectReference: {fileID: 5327075971297875098}
     - target: {fileID: 5327075971711032143, guid: a455f49fc61fb420782d792b32ec90a0, type: 3}
       propertyPath: grappleMax
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5327075971711032143, guid: a455f49fc61fb420782d792b32ec90a0, type: 3}
       propertyPath: grapplePoint
