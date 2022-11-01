@@ -426,7 +426,7 @@ public class PlayerController : MonoBehaviour
     {
         if (other.CompareTag("Poison"))
         {
-            Debug.Log("Contact with Poison Cloud.");
+            currenthealth -= 0.005f;
         }
     }
 }
