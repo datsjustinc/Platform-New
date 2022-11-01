@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8323810409163060552}
   - component: {fileID: 8323810409163060554}
   - component: {fileID: 8323810409163060553}
+  - component: {fileID: 541790382}
   m_Layer: 0
   m_Name: Particle
   m_TagString: Poison
@@ -3628,7 +3629,7 @@ ParticleSystem:
     colliderForce: 0
     multiplyColliderForceByParticleSize: 0
     multiplyColliderForceByParticleSpeed: 0
-    multiplyColliderForceByCollisionAngle: 1
+    multiplyColliderForceByCollisionAngle: 0
     m_Planes:
     - {fileID: 0}
     m_Dampen:
@@ -3799,7 +3800,7 @@ ParticleSystem:
     maxCollisionShapes: 256
     quality: 0
     voxelSize: 0.5
-    collisionMessages: 0
+    collisionMessages: 1
     collidesWithDynamic: 1
     interiorCollisions: 0
   TriggerModule:
@@ -4822,6 +4823,19 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
+--- !u!114 &541790382
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8323810409163060559}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c27658835965cf40afebd6770a55a74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  part: {fileID: 0}
 --- !u!1 &8323810409201678251
 GameObject:
   m_ObjectHideFlags: 0
@@ -4831,10 +4845,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8323810409201678260}
-  - component: {fileID: -511025880401625344}
   m_Layer: 0
   m_Name: PoisonCloud
-  m_TagString: Poison
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4856,19 +4869,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &-511025880401625344
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8323810409201678251}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2c27658835965cf40afebd6770a55a74, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  part: {fileID: 0}
 --- !u!1 &8323810410293777923
 GameObject:
   m_ObjectHideFlags: 0

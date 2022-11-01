@@ -426,7 +426,7 @@ public class PlayerController : MonoBehaviour
     {
         if (other.CompareTag("Poison"))
         {
-            currenthealth -= 0.005f;
+            currenthealth -= 0.010f;
         }
     }
 }
