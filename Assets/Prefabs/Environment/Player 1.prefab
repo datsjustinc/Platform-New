@@ -466,7 +466,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f174917e655a6e4ab09e5ebe77a5be1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  grapplePoint: {fileID: 0}
+  grapplePoint: {fileID: 6370866369429630595, guid: cfe845058ac59a442b68d7a8f0af2fd3, type: 3}
   grappleMax: 2
   grappleList: []
 --- !u!1 &5327075970678048899
