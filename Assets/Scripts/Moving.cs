@@ -5,7 +5,7 @@ using UnityEngine;
 public class Moving : MonoBehaviour
 {
     Rigidbody2D rb;
-    Vector2 originalPosition;
+    Vector3 originalPosition;
     BoxCollider2D bc;
     bool waitingfordelay = true;
 
