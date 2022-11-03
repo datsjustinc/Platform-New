@@ -204,7 +204,6 @@ MonoBehaviour:
   teleport: 0
   sgp: {fileID: 0}
   currenthealth: 0
-  cv: {fileID: 8848797853754332436, guid: d0d3e6eae9771493981c1d2dd582070e, type: 3}
 --- !u!114 &1198464872042702179
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -946,9 +945,9 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.24633272, y: -0.24236602}
+  m_Offset: {x: -0.24633235, y: 0.20716362}
   serializedVersion: 2
-  m_Radius: 1.0667461
+  m_Radius: 0.92859805
 --- !u!1 &8577820328143434446
 GameObject:
   m_ObjectHideFlags: 0
