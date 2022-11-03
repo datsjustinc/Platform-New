@@ -204,6 +204,7 @@ MonoBehaviour:
   teleport: 0
   sgp: {fileID: 0}
   currenthealth: 0
+  cv: {fileID: 8848797853754332436, guid: d0d3e6eae9771493981c1d2dd582070e, type: 3}
 --- !u!114 &1198464872042702179
 MonoBehaviour:
   m_ObjectHideFlags: 0
