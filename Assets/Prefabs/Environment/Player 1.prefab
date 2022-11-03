@@ -841,7 +841,7 @@ GameObject:
   - component: {fileID: 7382923629089306953}
   - component: {fileID: 1339215677767748669}
   - component: {fileID: 3456504629102269908}
-  - component: {fileID: 6915037763018449439}
+  - component: {fileID: 4993178951459883688}
   m_Layer: 10
   m_Name: GrappleSensor
   m_TagString: Untagged
@@ -905,7 +905,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 0.62352943}
   m_FlipX: 0
   m_FlipY: 0
@@ -932,8 +932,8 @@ MonoBehaviour:
   usedPoints: []
   closestGrapplePoint: {fileID: 0}
   pl: {fileID: 4071807902327232577}
---- !u!61 &6915037763018449439
-BoxCollider2D:
+--- !u!58 &4993178951459883688
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -945,19 +945,9 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
+  m_Offset: {x: -0.24633272, y: -0.24236602}
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
-  m_EdgeRadius: 0
+  m_Radius: 1.0667461
 --- !u!1 &8577820328143434446
 GameObject:
   m_ObjectHideFlags: 0
