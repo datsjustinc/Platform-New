@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Hard.unity
     guid: 2e007d92e89a54287a061a7ea588fab5
+  - enabled: 1
+    path: Assets/Scenes/Easy - Marcus.unity
+    guid: aeb853807939b4b6f8a2955f882a44a2
   m_configObjects: {}
