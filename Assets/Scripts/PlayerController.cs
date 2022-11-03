@@ -141,7 +141,7 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         textonscreen.text = "Time: " + ConvertTimeToString(stopwatch.Elapsed) +
-            $"\nDeaths: {deaths} / {dt.totaldeaths}" +
+            $"\nDeaths: {deaths}" +
             $"\nCollectibles: {unlocks} / {totalunlocks}" +
             $"\nGrapples: {sgp.grappleMax-sgp.grappleList.Count} / {sgp.grappleMax}";
 
@@ -320,9 +320,11 @@ public class PlayerController : MonoBehaviour
 
     IEnumerator disableGrapplePoint(GameObject point)
     {
-        point.SetActive(false);
+        if (point != null)
+            point.SetActive(false);
         yield return new WaitForSecondsRealtime(grappleModel.grapplePointExcludeCD);
-        point.SetActive(true);
+        if (point != null)
+            point.SetActive(true);
     }
 
     void FixedUpdate()
