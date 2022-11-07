@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 0.17540452, g: 0.21120372, b: 0.58040047, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -8190,6 +8190,18 @@ PrefabInstance:
       propertyPath: grappleModel.point
       value: 
       objectReference: {fileID: 281795446}
+    - target: {fileID: 5327075970678048898, guid: a455f49fc61fb420782d792b32ec90a0, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.02
+      objectReference: {fileID: 0}
+    - target: {fileID: 5327075970678048898, guid: a455f49fc61fb420782d792b32ec90a0, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.67
+      objectReference: {fileID: 0}
+    - target: {fileID: 5327075970678048898, guid: a455f49fc61fb420782d792b32ec90a0, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -13.21
+      objectReference: {fileID: 0}
     - target: {fileID: 5327075971711032143, guid: a455f49fc61fb420782d792b32ec90a0, type: 3}
       propertyPath: grapplePoint
       value: 
