@@ -2344,6 +2344,18 @@ PrefabInstance:
       propertyPath: grappleModel.point
       value: 
       objectReference: {fileID: 281795446}
+    - target: {fileID: 5327075970678048898, guid: a455f49fc61fb420782d792b32ec90a0, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.03
+      objectReference: {fileID: 0}
+    - target: {fileID: 5327075970678048898, guid: a455f49fc61fb420782d792b32ec90a0, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.55
+      objectReference: {fileID: 0}
+    - target: {fileID: 5327075970678048898, guid: a455f49fc61fb420782d792b32ec90a0, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -14.56
+      objectReference: {fileID: 0}
     - target: {fileID: 5327075971711032143, guid: a455f49fc61fb420782d792b32ec90a0, type: 3}
       propertyPath: player
       value: 

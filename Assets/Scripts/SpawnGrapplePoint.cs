@@ -14,16 +14,13 @@ public class SpawnGrapplePoint : MonoBehaviour
     public int grappleMax;
     PlayerController player;
     public List<GameObject> grappleList = new List<GameObject>();
-
-    private bool placedGrapplePoint;
-
+    public bool grapplePlaced;
+    
     void Start()
     {
         player = this.GetComponent<PlayerController>();
         main = this.transform.GetChild(6).GetComponent<Camera>();
-
-        placedGrapplePoint = false;
-
+        grapplePlaced = false;
     }
 
     public void ReloadGrapples()
@@ -34,34 +31,49 @@ public class SpawnGrapplePoint : MonoBehaviour
             grappleList.RemoveAt(0);
         }
     }
+    
+    public void GrappleCheck()
+    {
+        
+    }
 
     void Update()
     {
+        Vector3 mousePos = main.ScreenToWorldPoint(Input.mousePosition);
+        Vector2 mousePos2D = new Vector2(mousePos.x, mousePos.y);
+        RaycastHit2D hit = Physics2D.Raycast(mousePos2D, Vector2.zero);
 
         if (Input.GetKeyDown(KeyCode.Mouse0) && grappleList.Count < grappleMax)
         {
-            point = main.ScreenToWorldPoint(Input.mousePosition);
-            point.z = transform.position.z;
-            GameObject x = Instantiate(grapplePoint, point, Quaternion.identity);
-            x.GetComponent<SpriteRenderer>().color = Color.yellow;
-            grappleList.Add(x);
-            placedGrapplePoint = true;
-        }
-
-
-        if (Input.GetMouseButtonDown(0))
-        {
-            Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            Vector2 mousePos2D = new Vector2(mousePos.x, mousePos.y);
-
-            RaycastHit2D hit = Physics2D.Raycast(mousePos2D, Vector2.zero);
-            if (hit.collider.CompareTag("Grapple"))
+            if (!hit.collider.CompareTag("Grapple") && !grapplePlaced)
             {
-                Debug.Log(hit.collider.gameObject.name);
-          
+                GameObject x = Instantiate(grapplePoint, mousePos2D, Quaternion.identity);
+                x.GetComponent<SpriteRenderer>().color = Color.yellow;
+                grappleList.Add(x);
             }
         }
+        
+        if (hit.collider.CompareTag("Grapple"))
+        {
+            grapplePlaced = true;
 
+            if (Input.GetKeyDown(KeyCode.Mouse0))
+            {
+                for (int x = 0; x < grappleList.Count; x++)
+                {
+                    if (grappleList[x].Equals(hit.collider.gameObject))
+                    {
+                        grappleList.RemoveAt(x);
+                        Destroy(hit.collider.gameObject);
+                    }
+                }
+            }
+
+        }
+
+        else
+        {
+            grapplePlaced = false;
+        }
     }
-
 }

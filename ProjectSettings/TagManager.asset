@@ -21,6 +21,7 @@ TagManager:
   - Unlock
   - Poison
   - Grapple
+  - GrappleArea
   layers:
   - Default
   - TransparentFX
