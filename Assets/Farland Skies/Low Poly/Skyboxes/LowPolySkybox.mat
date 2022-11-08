@@ -49,7 +49,7 @@ Material:
     - _Exposure: 1
     - _MoonHalo: 1
     - _MoonSize: 0.75
-    - _StarsExtinction: 10
+    - _StarsExtinction: 2
     - _StarsTwinklingSpeed: 10
     - _SunHalo: 1
     - _SunSize: 0.75
