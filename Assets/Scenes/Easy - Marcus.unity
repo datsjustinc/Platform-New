@@ -3767,7 +3767,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   minDistance: 5
-  speed: 8
+  speed: 9.5
   offset: 6
   player: {fileID: 487078166}
 --- !u!4 &316618073
@@ -21380,6 +21380,10 @@ PrefabInstance:
     - target: {fileID: 1451816985492732, guid: 86c1ebf9ab0866c49ae8cda83bd1fb21, type: 3}
       propertyPath: m_Name
       value: ConfettiCanon (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4001591423288354, guid: 86c1ebf9ab0866c49ae8cda83bd1fb21, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.02
       objectReference: {fileID: 0}
     - target: {fileID: 4104872998859180, guid: 86c1ebf9ab0866c49ae8cda83bd1fb21, type: 3}
       propertyPath: m_RootOrder
