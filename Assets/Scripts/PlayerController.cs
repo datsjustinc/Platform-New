@@ -174,25 +174,27 @@ public class PlayerController : MonoBehaviour
     public void GotCollectible(GameObject x)
     {
         collectiblespending.Add(x);
-        x.SetActive(false);
+        x.GetComponent<BoxCollider2D>().enabled = false;
+        x.GetComponent<MeshRenderer>().enabled = false;
     }
 
-    public void RemoveCollectible(bool x)
+    public void RemoveCollectible(bool y)
     {
         while (collectiblespending.Count > 0)
         {
-            if (x)
+            if (y)
             {
-                GameObject y = collectiblespending[0];
+                GameObject x = collectiblespending[0];
                 collectiblespending.RemoveAt(0);
-                Destroy(y);
+                Destroy(x);
                 unlocks++;
             }
             else
             {
-                GameObject y = collectiblespending[0];
+                GameObject x = collectiblespending[0];
                 collectiblespending.RemoveAt(0);
-                y.SetActive(true);
+                x.GetComponent<BoxCollider2D>().enabled = true;
+                x.GetComponent<MeshRenderer>().enabled = true;
             }
         }
     }
@@ -380,6 +382,7 @@ public class PlayerController : MonoBehaviour
 
     public void LevelEnded()
     {
+        RemoveCollectible(true);
         stopwatch.Stop();
         dt.timetaken += stopwatch.Elapsed;
         EndScreen.SetActive(true);
