@@ -25,6 +25,7 @@ public class PlayerMoveState : PlayerState
     }
     public override void FixedUpdate(PlayerController pl)
     {
+        pl.RemoveCollectible(true);
         if (pl.conveyor == null)
         {
             pl.playerRB.velocity = new Vector2(pl.moveModel.HorizontalMovement * pl.moveModel.hspeed, pl.playerRB.velocity.y);
@@ -62,7 +63,8 @@ public class PlayerJumpState : PlayerState
     }
     public override void Update(PlayerController pl)
     {
-        if (pl.jumpModel.isGrounded && Mathf.Abs(pl.playerRB.velocity.y) < 0.1f) pl.ChangeState(pl.moveState);
+        if (pl.jumpModel.isGrounded && Mathf.Abs(pl.playerRB.velocity.y) < 0.1f)
+            pl.ChangeState(pl.moveState);
     }
     public override void FixedUpdate(PlayerController pl)
     {
@@ -99,21 +101,13 @@ public class PlayerDashState : PlayerState
         if (pl.conveyor == null)
             pl.playerRB.velocity = new Vector2(pl.dashModel.dashSpeed, 0) * (int)pl.moveModel.Direction;
         else if (pl.conveyor.going == Conveyor.Direction.left && pl.moveModel.Direction == PlayerMoveModel.PlayerDirection.Left)
-        {
             pl.playerRB.velocity = new Vector2(-1*pl.dashModel.dashSpeed - pl.conveyor.speed, pl.playerRB.velocity.y);
-        }
         else if (pl.conveyor.going == Conveyor.Direction.left && pl.moveModel.Direction == PlayerMoveModel.PlayerDirection.Right)
-        {
             pl.playerRB.velocity = new Vector2(pl.dashModel.dashSpeed - pl.conveyor.speed, pl.playerRB.velocity.y);
-        }
         else if (pl.conveyor.going == Conveyor.Direction.right && pl.moveModel.Direction == PlayerMoveModel.PlayerDirection.Right)
-        {
             pl.playerRB.velocity = new Vector2(pl.dashModel.dashSpeed + pl.conveyor.speed, pl.playerRB.velocity.y);
-        }
         else if (pl.conveyor.going == Conveyor.Direction.right && pl.moveModel.Direction == PlayerMoveModel.PlayerDirection.Left)
-        {
             pl.playerRB.velocity = new Vector2(-1*pl.dashModel.dashSpeed + pl.conveyor.speed, pl.playerRB.velocity.y);
-        }
     }
     public override void ExitState(PlayerController pl)
     {
@@ -155,7 +149,6 @@ public class PlayerSlidingState : PlayerState
         //pl.moveModel.HorizontalMovement = 0f;
         pl.playerRB.gravityScale = pl.slideModel.normalGravity;
         pl.playerAnim.SetBool("isSlide", false);
-
     }
 }
 

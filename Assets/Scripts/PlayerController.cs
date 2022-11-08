@@ -77,6 +77,8 @@ public class PlayerController : MonoBehaviour
     public float currenthealth;
     GameObject poison;
 
+    List<GameObject> collectiblespending = new List<GameObject>();
+
     // Start is called before the first frame update
     void Start()
     {
@@ -169,9 +171,30 @@ public class PlayerController : MonoBehaviour
         if (slideModel.slidingCancelTimer >= 0) slideModel.slidingCancelTimer -= Time.deltaTime;
     }
 
-    public void GotCollectible()
+    public void GotCollectible(GameObject x)
     {
-        unlocks++;
+        collectiblespending.Add(x);
+        x.SetActive(false);
+    }
+
+    public void RemoveCollectible(bool x)
+    {
+        while (collectiblespending.Count > 0)
+        {
+            if (x)
+            {
+                GameObject y = collectiblespending[0];
+                collectiblespending.RemoveAt(0);
+                Destroy(y);
+                unlocks++;
+            }
+            else
+            {
+                GameObject y = collectiblespending[0];
+                collectiblespending.RemoveAt(0);
+                y.SetActive(true);
+            }
+        }
     }
 
     void OnMove(InputValue input)
@@ -338,6 +361,7 @@ public class PlayerController : MonoBehaviour
             playerRB.velocity = new Vector2(0, 0);
             teleport = false;
             currenthealth = 1.0f;
+            RemoveCollectible(false);
             ChangeState(moveState);
             StartCoroutine(Delay());
             sgp.ReloadGrapples();
