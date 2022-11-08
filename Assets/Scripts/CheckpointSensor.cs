@@ -22,8 +22,7 @@ public class CheckpointSensor : MonoBehaviour
         }
         if (collision.gameObject.CompareTag("Unlock"))
         {
-            Destroy(collision.gameObject);
-            pc.GotCollectible();
+            pc.GotCollectible(collision.gameObject);
         }
         if (collision.gameObject.CompareTag("End"))
         {
