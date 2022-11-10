@@ -22,6 +22,7 @@ TagManager:
   - Poison
   - Grapple
   - GrappleArea
+  - Spawnable
   layers:
   - Default
   - TransparentFX

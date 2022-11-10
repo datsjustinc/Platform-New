@@ -45,7 +45,7 @@ public class SpawnGrapplePoint : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Mouse0) && grappleList.Count < grappleMax)
         {
-            if (!hit.collider.CompareTag("Grapple") && !grapplePlaced)
+            if (!hit.collider.CompareTag("Grapple") && hit.collider.CompareTag("Spawnable") && !grapplePlaced)
             {
                 GameObject x = Instantiate(grapplePoint, mousePos2D, Quaternion.identity);
                 x.GetComponent<SpriteRenderer>().color = Color.yellow;
