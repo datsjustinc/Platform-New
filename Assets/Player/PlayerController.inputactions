@@ -56,17 +56,6 @@
                 },
                 {
                     "name": "left",
-                    "id": "89684169-933f-4962-96c4-d3fad784fcc0",
-                    "path": "<Keyboard>/a",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Keyboard",
-                    "action": "Move",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "left",
                     "id": "f59e0d2f-f4be-40c3-bfe9-e48fb4256c5f",
                     "path": "<Keyboard>/leftArrow",
                     "interactions": "",
@@ -77,9 +66,9 @@
                     "isPartOfComposite": true
                 },
                 {
-                    "name": "right",
-                    "id": "0ba5763d-b74c-4819-9c75-ba36d52504f5",
-                    "path": "<Keyboard>/d",
+                    "name": "left",
+                    "id": "ed909f47-c7af-4ad8-94d5-89206995dfb7",
+                    "path": "<Keyboard>/a",
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard",
@@ -99,15 +88,15 @@
                     "isPartOfComposite": true
                 },
                 {
-                    "name": "",
-                    "id": "41637b3f-3999-462b-a044-fbdd52ddbdcf",
-                    "path": "<Keyboard>/w",
+                    "name": "right",
+                    "id": "426f08b3-7a3f-4e7c-b722-d2a3660c605c",
+                    "path": "<Keyboard>/d",
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard",
-                    "action": "Jump",
+                    "action": "Move",
                     "isComposite": false,
-                    "isPartOfComposite": false
+                    "isPartOfComposite": true
                 },
                 {
                     "name": "",
@@ -122,12 +111,12 @@
                 },
                 {
                     "name": "",
-                    "id": "063501f2-4d76-4231-9e2a-91887d6ed7d9",
-                    "path": "<Keyboard>/s",
+                    "id": "33d60c1c-d4c0-4ab3-b1f4-cf0f4f01eb75",
+                    "path": "<Keyboard>/w",
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard",
-                    "action": "Dash",
+                    "action": "Jump",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -149,17 +138,6 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard",
-                    "action": "Grapple",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "0ba79534-ca33-4f46-a20b-1111c53524fe",
-                    "path": "<XInputController>/buttonNorth",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "xbox",
                     "action": "Grapple",
                     "isComposite": false,
                     "isPartOfComposite": false
