@@ -25,7 +25,6 @@ public class PlayerMoveState : PlayerState
     }
     public override void FixedUpdate(PlayerController pl)
     {
-        pl.RemoveCollectible(true);
         if (pl.conveyor == null)
         {
             pl.playerRB.velocity = new Vector2(pl.moveModel.HorizontalMovement * pl.moveModel.hspeed, pl.playerRB.velocity.y);

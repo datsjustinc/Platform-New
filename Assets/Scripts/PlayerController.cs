@@ -79,6 +79,8 @@ public class PlayerController : MonoBehaviour
 
     List<GameObject> collectiblespending = new List<GameObject>();
 
+    public GameObject drone;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -174,25 +176,27 @@ public class PlayerController : MonoBehaviour
     public void GotCollectible(GameObject x)
     {
         collectiblespending.Add(x);
-        x.SetActive(false);
+        x.GetComponent<BoxCollider2D>().enabled = false;
+        x.GetComponent<MeshRenderer>().enabled = false;
     }
 
-    public void RemoveCollectible(bool x)
+    public void RemoveCollectible(bool y)
     {
         while (collectiblespending.Count > 0)
         {
-            if (x)
+            if (y)
             {
-                GameObject y = collectiblespending[0];
+                GameObject x = collectiblespending[0];
                 collectiblespending.RemoveAt(0);
-                Destroy(y);
+                Destroy(x);
                 unlocks++;
             }
             else
             {
-                GameObject y = collectiblespending[0];
+                GameObject x = collectiblespending[0];
                 collectiblespending.RemoveAt(0);
-                y.SetActive(true);
+                x.GetComponent<BoxCollider2D>().enabled = true;
+                x.GetComponent<MeshRenderer>().enabled = true;
             }
         }
     }
@@ -357,6 +361,7 @@ public class PlayerController : MonoBehaviour
         if (teleport)
         {
             gameObject.transform.position = spawn.transform.position;
+            drone.transform.position = new Vector3(spawn.transform.position.x -5, spawn.transform.position.y + 5, spawn.transform.position.z);
             moveModel.hspeed = 0;
             playerRB.velocity = new Vector2(0, 0);
             teleport = false;
@@ -380,6 +385,7 @@ public class PlayerController : MonoBehaviour
 
     public void LevelEnded()
     {
+        RemoveCollectible(true);
         stopwatch.Stop();
         dt.timetaken += stopwatch.Elapsed;
         EndScreen.SetActive(true);

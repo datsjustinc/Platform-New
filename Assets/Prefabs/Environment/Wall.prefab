@@ -75,6 +75,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 7.3411
       objectReference: {fileID: 0}
+    - target: {fileID: 7345142155243730152, guid: 04323232bf98f0e4eaf14c2adadc823c, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 8664580827795574972, guid: 04323232bf98f0e4eaf14c2adadc823c, type: 3}
       propertyPath: m_IsActive
       value: 0

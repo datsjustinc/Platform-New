@@ -16,6 +16,7 @@ public class CheckpointSensor : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Checkpoint"))
         {
+            pc.RemoveCollectible(true);
             pc.currenthealth = 1.0f;
             pc.sgp.ReloadGrapples();
             pc.spawn.transform.position = collision.gameObject.transform.position;
