@@ -8,6 +8,7 @@ public class OverlappingControls : MonoBehaviour
 {
     public TMP_Text[] collisions = new TMP_Text[3];
     public TMP_Text error;
+    string collision;
 
     private void Start()
     {
@@ -16,37 +17,50 @@ public class OverlappingControls : MonoBehaviour
 
     public void Ping()
     {
-        bool x = CheckForErrors();
-        Debug.Log(x);
-        error.gameObject.SetActive(x);
+        CheckForErrors();
+        if (collision == "")
+            error.text = "";
+        else
+            error.text = "Warning: Your " + collision + " key is acting as multiple actions. Game may be buggy as a result.";
     }
 
-    bool CheckForErrors()
+    void CheckForErrors()
     {
         for (int i = 0; i<collisions.Length; i++)
         {
             string nextText = collisions[i].text;
 
             if (i < 2 && nextText == collisions[i + 1].text)
-                return true;
+            {
+                collision = nextText;
+                return;
+            }
             if (i < 1 && nextText == collisions[i + 2].text)
-                return true;
+            {
+                collision = nextText;
+                return;
+            }
 
             switch (nextText)
             {
                 case ("Left Arrow"):
-                    return true;
+                    collision = nextText;
+                    return;
                 case ("Right Arrow"):
-                    return true;
+                    collision = nextText;
+                    return;
                 case ("A"):
-                    return true;
+                    collision = nextText;
+                    return;
                 case ("D"):
-                    return true;
+                    collision = nextText;
+                    return;
                 case ("Left Click"):
-                    return true;
+                    collision = nextText;
+                    return;
             }
         }
 
-        return false;
+        collision = "";
     }
 }
