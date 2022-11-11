@@ -9,6 +9,9 @@ public class Moving : MonoBehaviour
     BoxCollider2D bc;
     bool waitingfordelay = true;
 
+    float originalx;
+    float originaly;
+
     public float xspeed;
     public float yspeed;
     public bool bounce;
@@ -16,6 +19,9 @@ public class Moving : MonoBehaviour
     private void Awake()
     {
         originalPosition = transform.parent.localPosition;
+        originalx = xspeed;
+        originaly = yspeed;
+
         rb = transform.parent.gameObject.AddComponent<Rigidbody2D>();
         bc = this.gameObject.GetComponent<BoxCollider2D>();
         rb.freezeRotation = true;
@@ -25,6 +31,8 @@ public class Moving : MonoBehaviour
     public void ResetPosition()
     {
         transform.parent.localPosition = originalPosition;
+        xspeed = originalx;
+        yspeed = originaly;
     }
 
     private void FixedUpdate()
