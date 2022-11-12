@@ -361,7 +361,7 @@ public class PlayerController : MonoBehaviour
         if (teleport)
         {
             gameObject.transform.position = spawn.transform.position;
-            //drone.transform.position = new Vector3(spawn.transform.position.x -5, spawn.transform.position.y + 5, spawn.transform.position.z);
+            drone.transform.position = new Vector3(spawn.transform.position.x -5, spawn.transform.position.y + 5, spawn.transform.position.z);
             moveModel.hspeed = 0;
             playerRB.velocity = new Vector2(0, 0);
             teleport = false;
@@ -379,7 +379,7 @@ public class PlayerController : MonoBehaviour
 
     IEnumerator Delay()
     {
-        yield return new WaitForSeconds(0.7f);
+        yield return new WaitForSeconds(0.3f);
         moveModel.hspeed = defaultspeed;
     }
 

@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 7142305542726953001}
   - component: {fileID: 7142262034082642029}
   - component: {fileID: 7142144316402842749}
+  - component: {fileID: 6976958153749312765}
   m_Layer: 0
   m_Name: 'Fire Escape 1 '
   m_TagString: Untagged
@@ -115,7 +116,7 @@ MeshCollider:
   m_GameObject: {fileID: 7203781514564457509}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   m_Convex: 1
   m_CookingOptions: 30
@@ -129,7 +130,7 @@ MeshCollider:
   m_GameObject: {fileID: 7203781514564457509}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   m_Convex: 1
   m_CookingOptions: 30
@@ -143,7 +144,7 @@ MeshCollider:
   m_GameObject: {fileID: 7203781514564457509}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   m_Convex: 1
   m_CookingOptions: 30
@@ -157,7 +158,7 @@ MeshCollider:
   m_GameObject: {fileID: 7203781514564457509}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   m_Convex: 1
   m_CookingOptions: 30
@@ -171,11 +172,24 @@ MeshCollider:
   m_GameObject: {fileID: 7203781514564457509}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 43452803794894002, guid: bd1b089805fe58543936dca5e51e2494, type: 2}
+--- !u!65 &6976958153749312765
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7203781514564457509}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.2571604, y: 0.66004556, z: 1.7596945}
+  m_Center: {x: -3.7701852, y: -0.20252767, z: 0.8798472}
 --- !u!1001 &7203781514125867764
 PrefabInstance:
   m_ObjectHideFlags: 0
