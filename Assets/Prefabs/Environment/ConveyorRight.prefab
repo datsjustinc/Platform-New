@@ -44,6 +44,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Arrow2
       objectReference: {fileID: 0}
+    - target: {fileID: 108482, guid: 4c588df48d373f5448513a886280f4af, type: 3}
+      propertyPath: m_Layer
+      value: 13
+      objectReference: {fileID: 0}
     - target: {fileID: 411642, guid: 4c588df48d373f5448513a886280f4af, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -121,6 +125,10 @@ PrefabInstance:
     - target: {fileID: 108482, guid: 4c588df48d373f5448513a886280f4af, type: 3}
       propertyPath: m_Name
       value: Arrow1
+      objectReference: {fileID: 0}
+    - target: {fileID: 108482, guid: 4c588df48d373f5448513a886280f4af, type: 3}
+      propertyPath: m_Layer
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 411642, guid: 4c588df48d373f5448513a886280f4af, type: 3}
       propertyPath: m_RootOrder

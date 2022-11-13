@@ -127,6 +127,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Bridge_Edge_01
       objectReference: {fileID: 0}
+    - target: {fileID: 163466, guid: b2e8639d9a0fc7b48b6d71f8950a7686, type: 3}
+      propertyPath: m_Layer
+      value: 13
+      objectReference: {fileID: 0}
     - target: {fileID: 488566, guid: b2e8639d9a0fc7b48b6d71f8950a7686, type: 3}
       propertyPath: m_RootOrder
       value: 0

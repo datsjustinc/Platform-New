@@ -217,6 +217,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Bridge_Underside_01
       objectReference: {fileID: 0}
+    - target: {fileID: 133666, guid: b7da632ffaf738043bb3faaccede1417, type: 3}
+      propertyPath: m_Layer
+      value: 13
+      objectReference: {fileID: 0}
     - target: {fileID: 498088, guid: b7da632ffaf738043bb3faaccede1417, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -259,6 +263,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 498088, guid: b7da632ffaf738043bb3faaccede1417, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 65763920503759558, guid: b7da632ffaf738043bb3faaccede1417, type: 3}
+      propertyPath: m_IsTrigger
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

@@ -53,7 +53,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6743338441000289137, guid: 45691429c23495c46b2c333ffe52af67, type: 3}
       propertyPath: m_Name
-      value: ConveyorRight
+      value: ConveyorLeft
+      objectReference: {fileID: 0}
+    - target: {fileID: 6743338441716587676, guid: 45691429c23495c46b2c333ffe52af67, type: 3}
+      propertyPath: m_Layer
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 6743338441717005476, guid: 45691429c23495c46b2c333ffe52af67, type: 3}
       propertyPath: m_LocalPosition.x
@@ -110,6 +114,10 @@ PrefabInstance:
     - target: {fileID: 6743338442609060937, guid: 45691429c23495c46b2c333ffe52af67, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 6743338442609200241, guid: 45691429c23495c46b2c333ffe52af67, type: 3}
+      propertyPath: m_Layer
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 8999816544722842271, guid: 45691429c23495c46b2c333ffe52af67, type: 3}
       propertyPath: going

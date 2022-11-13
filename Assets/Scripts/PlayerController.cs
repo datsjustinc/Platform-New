@@ -379,7 +379,7 @@ public class PlayerController : MonoBehaviour
 
     IEnumerator Delay()
     {
-        yield return new WaitForSeconds(0.7f);
+        yield return new WaitForSeconds(0.3f);
         moveModel.hspeed = defaultspeed;
     }
 
@@ -403,8 +403,8 @@ public class PlayerController : MonoBehaviour
         }
         else if (unlocks < totalunlocks && dt.recordsno100[x] > stopwatch.Elapsed)
         {
+            EndScreen.transform.GetChild(1).GetComponent<TMP_Text>().text += $"You beat your previous time by {ConvertTimeToString(dt.recordsno100[x]-stopwatch.Elapsed)}!\n";
             dt.recordsno100[x] = stopwatch.Elapsed;
-            EndScreen.transform.GetChild(1).GetComponent<TMP_Text>().text += "You beat your previous time!\n";
         }
         if (unlocks >= totalunlocks && dt.allcollectibles[x] == false)
         {
@@ -415,8 +415,9 @@ public class PlayerController : MonoBehaviour
         else if (unlocks >= totalunlocks && dt.records100[x] > stopwatch.Elapsed)
         {
             EndScreen.transform.GetChild(1).GetComponent<TMP_Text>().text += "You got all the collectibles!\n";
-            EndScreen.transform.GetChild(1).GetComponent<TMP_Text>().text += "You beat your previous time!\n";
+            EndScreen.transform.GetChild(1).GetComponent<TMP_Text>().text += $"You beat your previous time by {ConvertTimeToString(dt.recordsno100[x] - stopwatch.Elapsed)}!\n";
             dt.records100[x] = stopwatch.Elapsed;
+
             if (dt.recordsno100[x] > stopwatch.Elapsed)
                 dt.recordsno100[x] = stopwatch.Elapsed;
         }
