@@ -80,6 +80,10 @@ public class PlayerController : MonoBehaviour
     List<GameObject> collectiblespending = new List<GameObject>();
 
     public GameObject drone;
+    public AudioSource audio;
+    public AudioClip grapple;
+    public AudioClip checkpoint;
+    public AudioClip collectible;
 
     // Start is called before the first frame update
     void Start()
@@ -101,6 +105,7 @@ public class PlayerController : MonoBehaviour
 
         healthbar = GameObject.Find("Health bar").GetComponent<Slider>();
         currenthealth = 1.0f;
+        audio = GetComponent<AudioSource>();
 
         totalunlocks = GameObject.Find("Unlockables").transform.childCount;
         textonscreen = GameObject.Find("Texties").GetComponent<TMP_Text>();
@@ -286,6 +291,7 @@ public class PlayerController : MonoBehaviour
             GameObject target = grappleModel.GrappleSensor.closestGrapplePoint;
             if (target != null) StartCoroutine(disableGrapplePoint(target));
             ChangeState(grappleState);
+            audio.PlayOneShot(grapple, 0.5f);
         }
     }
 
@@ -464,6 +470,19 @@ public class PlayerController : MonoBehaviour
         if (other.CompareTag("Poison"))
         {
             currenthealth -= 0.010f;
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Unlock"))
+        {
+            audio.PlayOneShot(collectible, 0.5f);
+        }
+        
+        if (collision.gameObject.CompareTag("Checkpoint"))
+        {
+            audio.PlayOneShot(checkpoint, 1f);
         }
     }
 }
