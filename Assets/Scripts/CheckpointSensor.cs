@@ -5,7 +5,7 @@ using UnityEngine;
 public class CheckpointSensor : MonoBehaviour
 {
     PlayerController pc;
-    GameObject currentcheckpoint;
+    Checkpoint currentcheckpoint;
 
     // Start is called before the first frame update
     void Start()
@@ -27,11 +27,17 @@ public class CheckpointSensor : MonoBehaviour
             pc.currenthealth = 1.0f;
             pc.sgp.ReloadGrapples();
 
-            if (collision.gameObject.CompareTag("Checkpoint") && collision.gameObject != currentcheckpoint)
+            Checkpoint x = collision.gameObject.GetComponent<Checkpoint>();
+
+            if (x != currentcheckpoint)
             {
-                currentcheckpoint = collision.gameObject;
+                if (currentcheckpoint != null)
+                    currentcheckpoint.active = false;
+                currentcheckpoint = x;
+                currentcheckpoint.active = true;
+
                 pc.audio.PlayOneShot(pc.checkpoint, 0.75f);
-                Instantiate(pc.checkpointEffect, pc.transform.position, Quaternion.identity);
+                Instantiate(pc.checkpointEffect, collision.gameObject.transform.position, Quaternion.identity);
                 pc.spawn.transform.position = collision.gameObject.transform.position;
             }
 
@@ -40,7 +46,7 @@ public class CheckpointSensor : MonoBehaviour
         {
             pc.GotCollectible(collision.gameObject);
             pc.audio.PlayOneShot(pc.collectible, 0.5f);
-            GameObject x = Instantiate(pc.collectedEffect, pc.transform.position, Quaternion.identity);
+            GameObject x = Instantiate(pc.collectedEffect, collision.gameObject.transform.position, Quaternion.identity);
             StartCoroutine(DestroyEffect(x));
         }
         if (collision.gameObject.CompareTag("End"))
