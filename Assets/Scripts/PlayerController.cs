@@ -415,11 +415,15 @@ public class PlayerController : MonoBehaviour
         else if (unlocks >= totalunlocks && dt.records100[x] > stopwatch.Elapsed)
         {
             EndScreen.transform.GetChild(1).GetComponent<TMP_Text>().text += "You got all the collectibles!\n";
-            EndScreen.transform.GetChild(1).GetComponent<TMP_Text>().text += $"You beat your previous time by {ConvertTimeToString(dt.recordsno100[x] - stopwatch.Elapsed)}!\n";
+            EndScreen.transform.GetChild(1).GetComponent<TMP_Text>().text += $"You beat your previous time by {ConvertTimeToString(dt.records100[x] - stopwatch.Elapsed)}!\n";
             dt.records100[x] = stopwatch.Elapsed;
 
             if (dt.recordsno100[x] > stopwatch.Elapsed)
                 dt.recordsno100[x] = stopwatch.Elapsed;
+        }
+        else if (unlocks >= totalunlocks)
+        {
+            EndScreen.transform.GetChild(1).GetComponent<TMP_Text>().text += "You got all the collectibles!\n";
         }
     }
 
