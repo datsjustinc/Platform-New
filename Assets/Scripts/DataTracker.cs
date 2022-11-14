@@ -33,4 +33,17 @@ public class DataTracker : MonoBehaviour
             Destroy(this.gameObject);
         }
     }
+
+    public void ResetData()
+    {
+        for (int i = 0; i<SceneManager.sceneCountInBuildSettings; i++)
+        {
+            levelcomplete[i] = false;
+            allcollectibles[i] = false;
+            records100[i] = new TimeSpan();
+            recordsno100[i] = new TimeSpan();
+        }
+
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
 }

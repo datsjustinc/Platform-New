@@ -75,11 +75,20 @@ public class PlayerController : MonoBehaviour
 
     Slider healthbar;
     public float currenthealth;
-    GameObject poison;
 
     List<GameObject> collectiblespending = new List<GameObject>();
 
     public GameObject drone;
+
+    public AudioSource audio;
+    public AudioClip grapple;
+    public AudioClip checkpoint;
+    public AudioClip collectible;
+    public AudioClip death;
+    public AudioClip end;
+
+    public GameObject checkpointEffect;
+    public GameObject collectedEffect;
 
     // Start is called before the first frame update
     void Start()
@@ -101,6 +110,7 @@ public class PlayerController : MonoBehaviour
 
         healthbar = GameObject.Find("Health bar").GetComponent<Slider>();
         currenthealth = 1.0f;
+        audio = GetComponent<AudioSource>();
 
         totalunlocks = GameObject.Find("Unlockables").transform.childCount;
         textonscreen = GameObject.Find("Texties").GetComponent<TMP_Text>();
@@ -286,6 +296,7 @@ public class PlayerController : MonoBehaviour
             GameObject target = grappleModel.GrappleSensor.closestGrapplePoint;
             if (target != null) StartCoroutine(disableGrapplePoint(target));
             ChangeState(grappleState);
+            audio.PlayOneShot(grapple, 0.2f);
         }
     }
 
@@ -360,6 +371,7 @@ public class PlayerController : MonoBehaviour
 
         if (teleport)
         {
+            audio.PlayOneShot(death, 0.75f);
             gameObject.transform.position = spawn.transform.position;
             drone.transform.position = new Vector3(spawn.transform.position.x -5, spawn.transform.position.y + 5, spawn.transform.position.z);
             moveModel.hspeed = 0;
@@ -385,6 +397,7 @@ public class PlayerController : MonoBehaviour
 
     public void LevelEnded()
     {
+        audio.PlayOneShot(end, 0.5f);
         RemoveCollectible(true);
         stopwatch.Stop();
         dt.timetaken += stopwatch.Elapsed;
@@ -438,16 +451,6 @@ public class PlayerController : MonoBehaviour
             deaths++;
             dt.totaldeaths++;
         }
-        if (collision.gameObject.CompareTag("Poison"))
-            poison = collision.gameObject;
-    }
-
-    private void OnCollisionStay2D(Collision2D collision)
-    {
-        if (collision.gameObject.CompareTag("Poison"))
-        {
-            currenthealth -= 0.005f;
-        }
     }
 
     void OnCollisionExit2D(Collision2D collision)
@@ -455,8 +458,6 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.CompareTag("Conveyor"))
             conveyor = null;
 
-        if (collision.gameObject.CompareTag("Poison"))
-            poison = null;
     }
     
     void OnParticleCollision(GameObject other)
@@ -466,4 +467,5 @@ public class PlayerController : MonoBehaviour
             currenthealth -= 0.010f;
         }
     }
+
 }
