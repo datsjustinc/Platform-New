@@ -371,6 +371,7 @@ public class PlayerController : MonoBehaviour
 
         if (teleport)
         {
+            audio.PlayOneShot(death, 0.75f);
             gameObject.transform.position = spawn.transform.position;
             drone.transform.position = new Vector3(spawn.transform.position.x -5, spawn.transform.position.y + 5, spawn.transform.position.z);
             moveModel.hspeed = 0;
@@ -447,7 +448,6 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.CompareTag("Spike"))
         {
             teleport = true;
-            audio.PlayOneShot(death, 0.5f);
             deaths++;
             dt.totaldeaths++;
         }
