@@ -22024,9 +22024,17 @@ PrefabInstance:
       propertyPath: nextindex
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1325153642887621838, guid: d0d3e6eae9771493981c1d2dd582070e, type: 3}
+      propertyPath: nextindex
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 1986748087341826649, guid: d0d3e6eae9771493981c1d2dd582070e, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8254971268499858408, guid: d0d3e6eae9771493981c1d2dd582070e, type: 3}
+      propertyPath: nextindex
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8848797853754332436, guid: d0d3e6eae9771493981c1d2dd582070e, type: 3}
       propertyPath: m_Camera
