@@ -75,15 +75,18 @@ public class PlayerController : MonoBehaviour
 
     Slider healthbar;
     public float currenthealth;
-    GameObject poison;
 
     List<GameObject> collectiblespending = new List<GameObject>();
 
     public GameObject drone;
+
     public AudioSource audio;
     public AudioClip grapple;
     public AudioClip checkpoint;
     public AudioClip collectible;
+
+    public GameObject checkpointEffect;
+    public GameObject collectedEffect;
 
     // Start is called before the first frame update
     void Start()
@@ -291,7 +294,7 @@ public class PlayerController : MonoBehaviour
             GameObject target = grappleModel.GrappleSensor.closestGrapplePoint;
             if (target != null) StartCoroutine(disableGrapplePoint(target));
             ChangeState(grappleState);
-            audio.PlayOneShot(grapple, 0.5f);
+            audio.PlayOneShot(grapple, 0.2f);
         }
     }
 
@@ -444,16 +447,6 @@ public class PlayerController : MonoBehaviour
             deaths++;
             dt.totaldeaths++;
         }
-        if (collision.gameObject.CompareTag("Poison"))
-            poison = collision.gameObject;
-    }
-
-    private void OnCollisionStay2D(Collision2D collision)
-    {
-        if (collision.gameObject.CompareTag("Poison"))
-        {
-            currenthealth -= 0.005f;
-        }
     }
 
     void OnCollisionExit2D(Collision2D collision)
@@ -461,8 +454,6 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.CompareTag("Conveyor"))
             conveyor = null;
 
-        if (collision.gameObject.CompareTag("Poison"))
-            poison = null;
     }
     
     void OnParticleCollision(GameObject other)
@@ -473,16 +464,4 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject.CompareTag("Unlock"))
-        {
-            audio.PlayOneShot(collectible, 0.5f);
-        }
-        
-        if (collision.gameObject.CompareTag("Checkpoint"))
-        {
-            audio.PlayOneShot(checkpoint, 1f);
-        }
-    }
 }
