@@ -5846,6 +5846,14 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4071807902327232587, guid: a455f49fc61fb420782d792b32ec90a0, type: 3}
+      propertyPath: end
+      value: 
+      objectReference: {fileID: 8300000, guid: eb11f3902f659f044b29e8823b2abd77, type: 3}
+    - target: {fileID: 4071807902327232587, guid: a455f49fc61fb420782d792b32ec90a0, type: 3}
+      propertyPath: death
+      value: 
+      objectReference: {fileID: 8300000, guid: fda9d063a8a8da1409d200f18125bce0, type: 3}
+    - target: {fileID: 4071807902327232587, guid: a455f49fc61fb420782d792b32ec90a0, type: 3}
       propertyPath: drone
       value: 
       objectReference: {fileID: 2010691845}
@@ -13578,10 +13586,6 @@ PrefabInstance:
       propertyPath: checkpointSound
       value: 
       objectReference: {fileID: 8300000, guid: 5fe9205052cb53c4195f3649b4f95fba, type: 3}
-    - target: {fileID: 0}
-      propertyPath: m_audioClip
-      value: 
-      objectReference: {fileID: 8300000, guid: 5fe9205052cb53c4195f3649b4f95fba, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: affb536d8a91e4098894bb10c65fa015, type: 3}
 --- !u!4 &1368678447 stripped
@@ -13606,7 +13610,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a32df2f89beb44499c50f5e100eb5fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  checkpointEffect: {fileID: 8526616781677832401, guid: 24c37152be2a2419787a1b7c3180be6c, type: 3}
 --- !u!1001 &1373824498
 PrefabInstance:
   m_ObjectHideFlags: 0

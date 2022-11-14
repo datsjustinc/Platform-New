@@ -36,7 +36,7 @@ public class CheckpointSensor : MonoBehaviour
                 currentcheckpoint = x;
                 currentcheckpoint.active = true;
 
-                pc.audio.PlayOneShot(pc.checkpoint, 0.75f);
+                pc.audio.PlayOneShot(pc.checkpoint, 1f);
                 Instantiate(pc.checkpointEffect, collision.gameObject.transform.position, Quaternion.identity);
                 pc.spawn.transform.position = collision.gameObject.transform.position;
             }
@@ -45,7 +45,7 @@ public class CheckpointSensor : MonoBehaviour
         if (collision.gameObject.CompareTag("Unlock"))
         {
             pc.GotCollectible(collision.gameObject);
-            pc.audio.PlayOneShot(pc.collectible, 0.5f);
+            pc.audio.PlayOneShot(pc.collectible, 0.3f);
             GameObject x = Instantiate(pc.collectedEffect, collision.gameObject.transform.position, Quaternion.identity);
             StartCoroutine(DestroyEffect(x));
         }

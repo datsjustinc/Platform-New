@@ -84,6 +84,8 @@ public class PlayerController : MonoBehaviour
     public AudioClip grapple;
     public AudioClip checkpoint;
     public AudioClip collectible;
+    public AudioClip death;
+    public AudioClip end;
 
     public GameObject checkpointEffect;
     public GameObject collectedEffect;
@@ -394,6 +396,7 @@ public class PlayerController : MonoBehaviour
 
     public void LevelEnded()
     {
+        audio.PlayOneShot(end, 0.5f);
         RemoveCollectible(true);
         stopwatch.Stop();
         dt.timetaken += stopwatch.Elapsed;
@@ -444,6 +447,7 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.CompareTag("Spike"))
         {
             teleport = true;
+            audio.PlayOneShot(death, 0.5f);
             deaths++;
             dt.totaldeaths++;
         }
