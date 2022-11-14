@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Checkpoint : MonoBehaviour
+public class collectable : MonoBehaviour
 {
-    public GameObject checkpointEffect; 
+    public GameObject collectedEffect;
 
     // Start is called before the first frame update
     void Start()
@@ -20,9 +20,9 @@ public class Checkpoint : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Player")
+        if(collision.gameObject.tag == "Player")
         {
-            Instantiate(checkpointEffect, transform.position, Quaternion.identity);
+            Instantiate(collectedEffect, transform.position, Quaternion.identity);
             Destroy(this.gameObject);
         }
     }

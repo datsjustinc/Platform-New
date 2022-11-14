@@ -348,6 +348,7 @@ GameObject:
   - component: {fileID: 5266832396015378124}
   - component: {fileID: 5266832396015378127}
   - component: {fileID: 8902627362087485107}
+  - component: {fileID: -6884632153618170157}
   m_Layer: 0
   m_Name: Unlockable
   m_TagString: Unlock
@@ -450,3 +451,16 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.52409744, y: 0.98733264}
   m_EdgeRadius: 0
+--- !u!114 &-6884632153618170157
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5266832396015378121}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5dad38b9eaff4ea3a5f25a350182bb1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  collectedEffect: {fileID: 5974813869779456699, guid: 8484e80ba6b904f2c83024f05d432de5, type: 3}
