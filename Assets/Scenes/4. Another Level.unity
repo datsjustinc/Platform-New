@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.08519111, g: 0.10182961, b: 0.15708229, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1087,6 +1087,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2031775094}
     m_Modifications:
+    - target: {fileID: 1048618659937502162, guid: eaecbbf89bf1643b590c8e3c7acda756, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
+    - target: {fileID: 2241712752104081885, guid: eaecbbf89bf1643b590c8e3c7acda756, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
     - target: {fileID: 5266832396015378121, guid: eaecbbf89bf1643b590c8e3c7acda756, type: 3}
       propertyPath: m_Name
       value: Unlockable
@@ -1135,6 +1143,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5452496359491842009, guid: eaecbbf89bf1643b590c8e3c7acda756, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
+    - target: {fileID: 6697055904545901590, guid: eaecbbf89bf1643b590c8e3c7acda756, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eaecbbf89bf1643b590c8e3c7acda756, type: 3}
 --- !u!4 &117217658 stripped
@@ -3732,6 +3748,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2031775094}
     m_Modifications:
+    - target: {fileID: 1048618659937502162, guid: eaecbbf89bf1643b590c8e3c7acda756, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
+    - target: {fileID: 2241712752104081885, guid: eaecbbf89bf1643b590c8e3c7acda756, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
     - target: {fileID: 5266832396015378121, guid: eaecbbf89bf1643b590c8e3c7acda756, type: 3}
       propertyPath: m_Name
       value: Unlockable (1)
@@ -3780,6 +3804,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5452496359491842009, guid: eaecbbf89bf1643b590c8e3c7acda756, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
+    - target: {fileID: 6697055904545901590, guid: eaecbbf89bf1643b590c8e3c7acda756, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eaecbbf89bf1643b590c8e3c7acda756, type: 3}
 --- !u!4 &682221474 stripped
